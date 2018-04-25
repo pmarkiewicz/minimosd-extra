@@ -99,7 +99,8 @@ static void NOINLINE showArrow(int16_t grad){
 
     rotate_arrow = grad_to_sect(grad);
 
-    while(rotate_arrow>16) rotate_arrow -= 16;
+    //while(rotate_arrow>16) rotate_arrow -= 16;
+    rotate_arrow %= 16;
     while(rotate_arrow<1)  rotate_arrow += 16;
 
     arrow_set1 += rotate_arrow * 2 - 2;

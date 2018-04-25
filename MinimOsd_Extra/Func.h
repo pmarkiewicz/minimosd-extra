@@ -436,12 +436,12 @@ static void setHomeVars()
 #ifdef IS_COPTER
  #ifdef IS_PLANE
  
-#if defined(USE_NMEA) // no arming
+  #if defined(USE_NMEA) // no arming
 
     if(osd_fix_type >= 3 && osd_satellites_visible >=6)
         lflags.motor_armed=true;
 
-#else
+  #else
  
     // copter & plane - differ by model_type
     if(sets.model_type == 0){  //plane
@@ -465,7 +465,7 @@ static void setHomeVars()
             lflags.was_armed = false;   // and clear armed flag
         }
     }
-#endif
+  #endif
  #else // pure copter
   //Check disarm to arm switching.
   if (lflags.motor_armed && !lflags.was_armed){
@@ -494,7 +494,9 @@ static void setHomeVars()
  
  #endif
 #endif
-
+#if defined(USE_MWII)
+    // not sure if we need anything here
+#else
     if(!lflags.osd_got_home && osd_fix_type >= 3 ) { // first home lock on GPS 3D fix - ну или если фикс пришел уже после арма
         osd_home = osd_pos; // lat, lon & alt
         lflags.osd_got_home = 1;
@@ -509,6 +511,7 @@ static void setHomeVars()
 
         osd_home_direction = coord_bearing();
     }
+#endif
 }
 
 
