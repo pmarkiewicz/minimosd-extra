@@ -502,6 +502,7 @@ static const Mwii_bits PROGMEM bits[] ={
         msgbuf.mwii.sensorActive & mode_stable  -> angle
         else                        -> acro
 */
+/*
 static void mwii_check_mode() {
 
     const  Mwii_bits *bp=bits;
@@ -521,7 +522,7 @@ static void mwii_check_mode() {
 
 
 }
-
+*/
 // --------------------------------------------------------------------------------------
 // Here are decoded received commands from MultiWii
 static inline void mwii_parse_data() {
