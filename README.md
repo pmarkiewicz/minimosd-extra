@@ -1,3 +1,5 @@
+Fork of outstanding night-ghost work to fix issues found in MWII protocol support
+
 # minimosd-extra (russian is at the tail of this file)
 
 Quickstart Guide (c) Johnex
