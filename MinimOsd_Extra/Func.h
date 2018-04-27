@@ -428,8 +428,9 @@ int NOINLINE  coord_bearing(){
 
 static void setHomeVars()
 {
+#if !defined(USE_MWII)
     float dstlon, dstlat;
-
+#endif
 
     if(osd_fix_type!=0) lflags.gps_active=1; // если что-то появилось то запомним что было
 
